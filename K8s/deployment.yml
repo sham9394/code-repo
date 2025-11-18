@@ -30,9 +30,11 @@ kind: Service
 metadata:
   name: cityzen-service
 spec:
-  type: LoadBalancer     # change to NodePort if not using cloud
+  type: NodePort
   selector:
     app: cityzen
   ports:
     - port: 80
       targetPort: 80
+      nodePort: 30080   # Any port 30000–32767
+
